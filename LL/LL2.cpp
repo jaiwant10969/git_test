@@ -9,6 +9,7 @@ public:
     Node *next;
 };
 
+//declaring head as global variable
 Node *head;
 
 //function to Insert the node
