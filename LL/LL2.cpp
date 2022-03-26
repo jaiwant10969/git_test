@@ -11,6 +11,7 @@ public:
 
 Node *head;
 
+//function to Insert the node
 void Insert(int number, int position){
     Node *temp = new Node();
     temp->data=number;
@@ -27,7 +28,7 @@ void Insert(int number, int position){
     temp->next=temp2->next;
     temp2->next=temp;
 }
-
+//function to print LL
 void Print(){
     Node *temp=head;
     while(temp!=NULL){

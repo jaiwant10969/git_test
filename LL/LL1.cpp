@@ -10,12 +10,15 @@ public:
 };
 Node *head;
 
+//function to insert the node
 void Insert(int x){
     Node *temp = new Node();
     temp->data=x;
     temp->next=head;
     head = temp;
 }
+
+//function to print LL
 void Print(){
     Node *temp=head;
     while(temp!=NULL){
