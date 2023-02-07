@@ -1,42 +1,40 @@
-/* Inserting a node at the beginning of a linked list*/
+//Inserting a node at the begining of linked list
+
 
 #include<iostream>
 using namespace std;
 
-class Node{             
+class Node{
 public:
     int data;
     Node *next;
 };
-Node *head;
 
-//function to insert the node
-void Insert(int x){
-    Node *temp = new Node();
-    temp->data=x;
-    temp->next=head;
-    head = temp;
+void Insert(Node **head,int element){
+    Node *temp=new Node();
+    temp->data=element;
+    temp->next=*head;
+    *head=temp;
 }
 
-//function to print LL
-void Print(){
-    Node *temp=head;
-    while(temp!=NULL){
-        cout<<temp->data;
-        temp=temp->next;
+void Print(Node *head){
+    while(head!=NULL){
+        cout<<head->data<<" ";
+        head=head->next;
     }
-    cout<<"\n";
 }
+
 int main(){
-    head=NULL; 
-    int n,x;
-    cout<<"How many numers?";
-    cin>>n;
-    for(int i=0;i<n;i++){
-        cout<<"Enter the number: ";
-        cin>>x;
-        Insert(x);
-        Print();
+    Node *head=NULL;                    //head is set as local variable
+    int No_of_elements;
+    cout<<"Enter the number of elements: ";
+    cin>>No_of_elements;
+    for(int i=0;i<No_of_elements;i++){
+        int element;
+        cout<<"Enter the element: ";
+        cin>>element;
+        Insert(&head,element);
     }
+    Print(head);
     return 0;
 }
